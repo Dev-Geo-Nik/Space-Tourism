@@ -1,53 +1,64 @@
 /*****************         Custom properties             **************************/
 
 :root {
-  // Colors
-  --clr-dark: 230 35% 7%;
-  --clr-light: 231 77% 90%;
-  --clr-white: 0 0% 100%;
+	// Colors
+	--clr-dark: 230 35% 7%;
+	--clr-light: 231 77% 90%;
+	--clr-white: 0 0% 100%;
 
-  // font-size   size/16 to find rem
-  // 150px
-  --fs-900: 9.375rem;
-  // 100px
-  --fs-800: 6.25rem;
-  // 56px
-  --fs-700: 3.5rem;
-  // 32px
-  --fs-600: 2rem;
-  // 28px
-  --fs-500: 1.75rem;
-  // 18px for the base body text
-  --fs-400: 1.125rem;
-  // 16px
-  --fs-300: 1rem;
-  // 14px
-  --fs-200: 0.875rem;
+	// 150px
+	--fs-900: 15rem;
+	// 100px
+	--fs-800: 10rem;
+	// 56px
+	--fs-700: 5.6rem;
+	// 32px
+	--fs-600: 3.2rem;
+	// 28px
+	--fs-500: 2.8rem;
+	// 18px for the base body text
+	--fs-400: 1.8rem;
+	// 16px
+	--fs-300: 1.6rem;
+	// 14px
+	--fs-200: 1.4rem;
 
-  // Font families
-  --ff-serif: "Bellefair", serif;
-  --ff-sans-cond: "Barlow Condensed", sans-serif;
-  --ff-sans-normal: "Barlow", sans-serif;
+	// Font families
+	--ff-serif: "Bellefair", serif;
+	--ff-sans-cond: "Barlow Condensed", sans-serif;
+	--ff-sans-normal: "Barlow", sans-serif;
 }
 
 /*****************         Resets             **************************/
 *,
 *::before,
 *::after {
-  margin: 0;
-  // padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-  list-style: none;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /* Remove default margin */
@@ -61,7 +72,7 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+	margin: 0;
 }
 
 h1,
@@ -70,23 +81,28 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 body {
-  font-family: var(--ff-sans-normal);
-  font-size: var(--fs-400);
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  color: hsl(var(--clr-white));
-  background-color: hsl(var(--clr-dark));
+	font-family: var(--ff-sans-normal);
+	font-size: var(--fs-400);
+	// min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	color: hsl(var(--clr-white));
+	// background-color: hsl(var(--clr-dark));
+}
+
+// This is for react root div element
+body > #root > div {
+	min-height: 100vh;
 }
 
 img,
 picture {
-  max-width: 100%;
-  display: block;
+	max-width: 100%;
+	display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -94,255 +110,264 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+	html:focus-within {
+		scroll-behavior: auto;
+	}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /*****************         Utility classes             **************************/
 .flex {
-  display: flex;
-  gap: var(--gap, 1rem);
+	display: flex;
+	gap: var(--gap, 1rem);
 }
 
 .grid {
-  display: grid;
-  gap: var(--gap, 1rem);
+	display: grid;
+	gap: var(--gap, 1rem);
 }
 
 .flow > *:where(:not(:first-child)) {
-  margin-top: var(--flow-space, 1rem);
-  outline: 1px solid red;
+	margin-top: var(--flow-space, 1rem);
+	outline: 1px solid red;
 }
 
 .container {
-  padding-inline: 2em;
-  margin-inline: auto;
-  max-width: 80rem;
+	padding-inline: 2em;
+	margin-inline: auto;
+	max-width: 80rem;
 }
 
 .grid-container {
-  display: grid;
+	display: grid;
 
-  grid-template-columns: 2em minmax(0px 40rem) minmax(0px 40rem) 2em;
-  grid-gap: 2rem;
+	grid-template-columns: 2em minmax(0px 40rem) minmax(0px 40rem) 2em;
+	grid-gap: 2rem;
 }
 
 // This class hides the elements from the dom , is not like display none that the element removed from the dom tree
 .sr-only {
-  padding: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: react(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+	padding: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: react(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 /*****************        Colors            **************************/
 .bg-dark {
-  background-color: hsl(var(--clr-dark));
+	background-color: hsl(var(--clr-dark));
 }
 
 .bg-light {
-  background-color: hsl(var(--clr-light));
+	background-color: hsl(var(--clr-light));
 }
 
 .bg-white {
-  background-color: hsl(var(--clr-white));
+	background-color: hsl(var(--clr-white));
 }
 
 .text-dark {
-  color: hsl(var(--clr-dark));
+	color: hsl(var(--clr-dark));
 }
 
 .text-accent {
-  color: hsl(var(--clr-light));
+	color: hsl(var(--clr-light));
 }
 
 .text-white {
-  color: hsl(var(--clr-white));
+	color: hsl(var(--clr-white));
 }
 
 /*****************        Typography            **************************/
 
 .ff-serif {
-  font-family: var(--ff-serif);
+	font-family: var(--ff-serif);
 }
 
 .ff-sans-cond {
-  font-family: var(--ff-sans-cond);
+	font-family: var(--ff-sans-cond);
 }
 
 .ff-sans-normal {
-  font-family: var(--ff-sans-normal);
+	font-family: var(--ff-sans-normal);
 }
 
 .letter-spacing-1 {
-  letter-spacing: 4.75px;
+	letter-spacing: 4.75px;
 }
 
 .letter-spacing-2 {
-  letter-spacing: 2.7px;
+	letter-spacing: 2.7px;
 }
 
 .letter-spacing-3 {
-  letter-spacing: 2.35px;
+	letter-spacing: 2.35px;
 }
 
 .fs-900 {
-  font-size: var(--fs-900);
+	font-size: var(--fs-900);
 }
 
 .fs-800 {
-  font-size: var(--fs-800);
+	font-size: var(--fs-800);
 }
 
 .fs-700 {
-  font-size: var(--fs-700);
+	font-size: var(--fs-700);
 }
 
 .fs-600 {
-  font-size: var(--fs-600);
+	font-size: var(--fs-600);
 }
 
 .fs-500 {
-  font-size: var(--fs-500);
+	font-size: var(--fs-500);
 }
 
 .fs-400 {
-  font-size: var(--fs-400);
+	font-size: var(--fs-400);
 }
 
 .fs-300 {
-  font-size: var(--fs-300);
+	font-size: var(--fs-300);
 }
 
 .fs-200 {
-  font-size: var(--fs-200);
+	font-size: var(--fs-200);
 }
 
 .uppercase {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .fs-900,
 .fs-800,
 .fs-700,
 .fs-600 {
-  line-height: 1.1;
+	line-height: 1.1;
 }
 
 /*****************        Components            **************************/
 .numbered-title {
-  font-family: var(--ff-sans-cond);
-  font-size: var(--ff-500);
-  text-transform: uppercase;
-  letter-spacing: 4.27px;
+	font-family: var(--ff-sans-cond);
+	font-size: var(--ff-500);
+	text-transform: uppercase;
+	letter-spacing: 4.27px;
 }
 
 .numbered-title span {
-  font-size: var(--fs-500);
-  margin-right: 0.5em;
-  font-weight: 700;
-  color: hsl(var(--clr-white) / 0.25);
+	font-size: var(--fs-500);
+	margin-right: 0.5em;
+	font-weight: 700;
+	color: hsl(var(--clr-white) / 0.25);
 }
 
 .large-button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 274px;
-  height: 274px;
-  text-decoration: none;
-  border-radius: 50%;
-  z-index: 1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 274px;
+	height: 274px;
+	text-decoration: none;
+	border-radius: 50%;
+	z-index: 1;
 }
 
 .large-button::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
 
-  border-radius: 50%;
-  z-index: -1;
-  background: hsl(var(--clr-white) / 0.15);
-  opacity: 0;
-  transition: transform 500ms ease-in-out, opacity 400ms linear;
+	border-radius: 50%;
+	z-index: -1;
+	background: hsl(var(--clr-white) / 0.15);
+	opacity: 0;
+	transition: transform 500ms ease-in-out, opacity 400ms linear;
 }
 
 .large-button:hover::after,
 .large-button:focus::after {
-  opacity: 1;
-  transform: scale(1.5);
+	opacity: 1;
+	transform: scale(1.5);
 }
 
 .primary-navigation {
-  --gap: 8rem;
-  --underline-gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	--gap: 8rem;
+	--underline-gap: 2rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .primary-navigation a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .primary-navigation a > span {
-  font-weight: 700;
-  margin-right: 0.5em;
+	font-weight: 700;
+	margin-right: 0.5em;
 }
 
 .underline-indicators > * {
-  padding: var(--underline-gap, 1rem) 0;
-  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+	padding: var(--underline-gap, 1rem) 0;
+	border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
 }
 
 .underline-indicators > *:hover,
 .underline-indicators > *:focus {
-  border-color: hsl(var(--clr-white) / 0.25);
+	border-color: hsl(var(--clr-white) / 0.25);
 }
 
 .underline-indicators > .active {
-  border-color: hsl(var(--clr-white) / 1);
+	border-color: hsl(var(--clr-white) / 1);
 }
 
 .tab-list {
-  --gap: 2rem;
+	--gap: 2rem;
 }
 
 .dot-indicators > * {
-  cursor: pointer;
-  border: 0;
-  border-radius: 50%;
-  padding: 0.5em;
-  background-color: hsl(var(--clr-white) / 0.25);
+	cursor: pointer;
+	border: 0;
+	border-radius: 50%;
+	padding: 0.5em;
+	background-color: hsl(var(--clr-white) / 0.25);
 }
 
 .dot-indicators > *:hover,
 .dot-indicators > *:focus {
-  background-color: hsl(var(--clr-white) / 0.5);
+	background-color: hsl(var(--clr-white) / 0.5);
 }
 
 .dot-indicators > [aria-selected="true"] {
-  background-color: hsl(var(--clr-white) / 1);
+	background-color: hsl(var(--clr-white) / 1);
+}
+
+@media (min-width: 45em) {
+}
+
+.active {
+	// background-color: yellow;
+	border-bottom: 3px solid #fff;
+	// height: 100%;
 }

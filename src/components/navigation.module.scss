@@ -1,0 +1,67 @@
+.header {
+	padding: 4rem 0 0 5.5rem;
+	width: 100%;
+}
+
+.content {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	height: 100%;
+	height: 9.6rem;
+	overflow: hidden;
+	grid-template-columns: 5rem 1fr 1fr;
+}
+
+.nav {
+	width: 100%;
+	height: 100%;
+	background-color: hsl(var(--clr-white) / 0.04);
+	backdrop-filter: blur(81.55px);
+}
+
+.logoContainer {
+	background-color: red;
+	width: 5rem;
+	margin-right: 0;
+}
+.logo {
+	height: 4.8rem;
+	width: 4.8rem;
+}
+
+.line {
+	z-index: 2;
+	height: 0.1rem;
+	min-width: 47.3rem;
+	width: 100%;
+	margin-left: 6.2rem;
+	background-color: hsl(var(--clr-light));
+}
+
+.list {
+	min-width: 66.3rem;
+	width: 100%;
+	display: flex;
+
+	height: 100%;
+	align-items: center;
+	margin-left: 12rem;
+}
+
+.linkText {
+	font-family: var(--ff-sans-cond);
+	text-transform: uppercase;
+	letter-spacing: 2.7px;
+	font-size: var(--fs-300);
+	color: var(--clr-white);
+	margin-right: 5rem;
+	height: 100%;
+	padding: 3.5rem 0;
+}
+
+.linkNumber {
+	font-weight: bold;
+	margin-right: 1rem;
+	letter-spacing: 2.7px;
+}
