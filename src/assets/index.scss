@@ -23,7 +23,25 @@
 	// 14px
 	--fs-200: 1.4rem;
 
+	// Tablet
+	// 150px
+	--fs-900-t: 15rem;
+	// 20
+	--fs-600-t: 2rem;
+	// 16
+	--fs-400-t: 1.6rem;
 	// Font families
+
+	// Smartphone
+	// 80
+	--ff-900-s: 8rem;
+	// 20
+	--ff-600-s: 2rem;
+	// 16
+	--ff-600-s: 1.6rem;
+	// 15
+	--fs-400-s: 1.5rem;
+
 	--ff-serif: "Bellefair", serif;
 	--ff-sans-cond: "Barlow Condensed", sans-serif;
 	--ff-sans-normal: "Barlow", sans-serif;
@@ -367,7 +385,8 @@ select {
 }
 
 .active {
-	// background-color: yellow;
 	border-bottom: 3px solid #fff;
-	// height: 100%;
 }
+
+//From 768 break point until 1024 I apply the design
+//From 375 break point until 480 I apply the design
