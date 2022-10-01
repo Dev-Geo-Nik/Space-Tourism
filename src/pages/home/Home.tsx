@@ -15,12 +15,12 @@ const Home: React.FC = () => {
 						SO, YOU WANT TO TRAVEL TO<span className={styles.spanText}>SPACE</span>
 					</h1>
 					<p className={styles.paragraph}>
-						Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well
-						sit back, and relax because we’ll give you a truly out of this world experience!
+						Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give
+						you a truly out of this world experience!
 					</p>
 				</div>
 				<div className={styles.btnContainer}>
-					<Link to="/destinations" className={styles.exploreButton}>
+					<Link to="/destination/moon" className={styles.exploreButton}>
 						<span className={styles.exploreText}>Explore</span>
 					</Link>
 				</div>

@@ -1,21 +1,43 @@
 import styles from "./destinationSingle.module.scss";
 import Navigation from "./Navigation";
-import image from "../assets/img/destination/image-moon.webp";
-import { NavLink } from "react-router-dom";
+import { databaseData } from "../data/data";
+import { Navigate, NavLink, useLocation } from "react-router-dom";
+import DestinationImage from "../assets/img/destination/background-destination-desktop.jpg";
+
 const DestinationSingle: React.FC = () => {
+	const { pathname } = useLocation();
+	const destination = pathname.split("/")[2];
+	const { destinations } = databaseData;
+
+	const currentDestination = destinations.filter((destinationData: any) => {
+		const { name } = destinationData;
+		// console.log(name);
+		if (destination === name.toLocaleLowerCase()) {
+			return destinationData;
+		}
+	});
+
+	if (currentDestination.length === 0) {
+		return <Navigate to="/" state={{ from: pathname }} replace />;
+	}
+
+	const { name, description, travel, distance, images } = currentDestination[0];
+
 	return (
 		<div className={styles.destination}>
+			<img src={DestinationImage} alt="" className={`${styles.backgroundImage} ${styles.backgroundImageDesktop}`} />
+
 			<Navigation />
 			<h2 className={styles.subtile}>
 				<span className={styles.spanNumber}>01</span>Pick destination
 			</h2>
 			<section className={styles.contextContainer}>
 				<div></div>
-				<img className={styles.destinationImage} src={image} alt="destination planet " />
+				<img src={images.png} alt="pic" className={styles.destinationImage} />
 				<div></div>
 				<div className={styles.textContainer}>
 					<ul className={styles.list}>
-						<NavLink to="/destination/" end className={({ isActive }) => (isActive ? ` ${styles.linkText} ${styles.linkActive} ` : `${styles.linkText} `)}>
+						<NavLink to="/destination/moon" end className={({ isActive }) => (isActive ? ` ${styles.linkText} ${styles.linkActive} ` : `${styles.linkText} `)}>
 							Moon
 						</NavLink>
 						<NavLink to="/destination/mars" end className={({ isActive }) => (isActive ? ` ${styles.linkText} ${styles.linkActive} ` : `${styles.linkText} `)}>
@@ -28,12 +50,20 @@ const DestinationSingle: React.FC = () => {
 							Titan
 						</NavLink>
 					</ul>
-					<p className={styles.destinationTitle}>Moon</p>
-					<p className={styles.destinationParagraph}>
-						See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by
-						visiting the Luna 2 and Apollo 11 landing sites.
-					</p>
+
+					<p className={styles.destinationTitle}>{name}</p>
+					<p className={styles.destinationParagraph}>{description}</p>
+
 					<div className={styles.line}></div>
+
+					<div className={styles.distanceContainer}>
+						<p className={styles.distanceLabel}>AVG. DISTANCE</p>
+						<p className={styles.distanceText}>{distance}</p>
+					</div>
+					<div className={styles.timeContainer}>
+						<p className={styles.timeLabel}>Est. travel time</p>
+						<p className={styles.timeText}>{travel}</p>
+					</div>
 				</div>
 				<div></div>
 			</section>

@@ -19,7 +19,7 @@ const Navigation: React.FC = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/destination" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
+							<NavLink to="/destination/moon" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
 								<span className={styles.linkNumber}>01</span> Destination
 							</NavLink>
 						</li>
