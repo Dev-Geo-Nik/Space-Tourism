@@ -1,8 +1,8 @@
 import styles from "./destinationSingle.module.scss";
-import Navigation from "./Navigation";
-import { databaseData } from "../data/data";
+import Navigation from "../../components/Navigation";
+import { databaseData } from "../../data/data";
+// Libraries
 import { Navigate, NavLink, useLocation } from "react-router-dom";
-import DestinationImage from "../assets/img/destination/background-destination-desktop.jpg";
 
 const DestinationSingle: React.FC = () => {
 	const { pathname } = useLocation();
@@ -11,7 +11,7 @@ const DestinationSingle: React.FC = () => {
 
 	const currentDestination = destinations.filter((destinationData: any) => {
 		const { name } = destinationData;
-		// console.log(name);
+
 		if (destination === name.toLocaleLowerCase()) {
 			return destinationData;
 		}
@@ -25,8 +25,7 @@ const DestinationSingle: React.FC = () => {
 
 	return (
 		<div className={styles.destination}>
-			<img src={DestinationImage} alt="" className={`${styles.backgroundImage} ${styles.backgroundImageDesktop}`} />
-
+			{/* <img src={DestinationImage} alt="" className={`${styles.backgroundImage} ${styles.backgroundImageDesktop}`} /> */}
 			<Navigation />
 			<h2 className={styles.subtile}>
 				<span className={styles.spanNumber}>01</span>Pick destination
@@ -50,7 +49,6 @@ const DestinationSingle: React.FC = () => {
 							Titan
 						</NavLink>
 					</ul>
-
 					<p className={styles.destinationTitle}>{name}</p>
 					<p className={styles.destinationParagraph}>{description}</p>
 

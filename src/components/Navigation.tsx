@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/crew" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
+							<NavLink to="/crew/douglas-hurley" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
 								<span className={styles.linkNumber}>02</span> Crew
 							</NavLink>
 						</li>

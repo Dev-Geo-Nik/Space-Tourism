@@ -1,0 +1,233 @@
+.crew {
+	width: 100%;
+	height: 100%;
+	background-image: url("../../assets/img/crew/background-crew-desktop.jpg");
+	background-size: cover;
+	display: grid;
+	grid-template-rows: minmax(15rem, auto) 1fr;
+}
+
+.content {
+	display: grid;
+	grid-auto-flow: column;
+	margin: 5rem 12% 0 12%;
+	align-items: flex-end;
+}
+
+.textContainer {
+	// background-color: cadetblue;
+	height: 100%;
+}
+
+.subtile {
+	font-family: var(--ff-sans-cond);
+	font-size: var(--fs-500);
+	text-transform: uppercase;
+	letter-spacing: 0.472rem;
+	margin-bottom: 15.4rem;
+}
+
+.spanNumber {
+	margin-right: 2.4rem;
+	color: hsl(var(--clr-light) / 0.4);
+	font-weight: 900;
+}
+
+.specialty {
+	font-family: var(--ff-serif);
+	font-size: var(--fs-600);
+	text-transform: uppercase;
+	color: hsl(var(--clr-light) / 0.52);
+	margin-bottom: 1.5rem;
+}
+
+.textContainer {
+	// background-color: blueviolet;
+}
+
+.name {
+	font-family: var(--ff-serif);
+	font-size: var(--fs-700);
+	text-transform: uppercase;
+	margin-bottom: 2.7rem;
+}
+
+.mainText {
+	width: 44.4rem;
+	font-family: var(--ff-sans-normal);
+	font-size: var(--fs-400);
+	line-height: 3.2rem;
+	color: #d0d6f9;
+	margin-bottom: 12rem;
+}
+
+.linkText {
+	height: 1.5rem;
+	display: inline-block;
+	width: 1.5rem;
+	border-radius: 50%;
+	background-color: hsl(var(--clr-light) / 0.52);
+	margin-right: 2.4rem;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.imageContainer {
+	// background-color: palevioletred;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.image {
+	// background-color: red;
+	height: 100%;
+	object-fit: contain;
+}
+
+.linkActive {
+	background-color: #fff;
+}
+
+.linkText:hover {
+	background-color: #979797;
+}
+
+// 760px 1024px
+@media (max-width: 64em) {
+	.crew {
+		background-image: url("../../assets/img/crew/background-crew-tablet.jpg");
+		grid-template-rows: minmax(10rem, auto) 1fr 5rem;
+		grid-auto-flow: column;
+		// overflow: hidden;
+	}
+	.content {
+		grid-auto-flow: row;
+		height: 100%;
+		margin: 4rem 12% 0 12%;
+	}
+
+	.textContainer {
+		text-align: center;
+		// background: red;
+	}
+
+	.subtile {
+		font-size: var(--fs-600-t);
+		text-transform: uppercase;
+		letter-spacing: 0.338rem;
+		margin-bottom: 6rem;
+		text-align: left;
+		margin-left: -4rem;
+	}
+
+	.specialty {
+		font-size: var(--fs-650-t);
+		margin-bottom: 0.8rem;
+	}
+
+	.name {
+		font-size: var(--fs-700-t);
+		margin-bottom: 1.6rem;
+	}
+
+	.mainText {
+		width: 52rem;
+		margin: 0 auto 4rem auto;
+		font-size: var(--fs-400-t);
+		line-height: 2.8rem;
+	}
+
+	.linkText {
+		height: 1rem;
+		width: 1rem;
+		margin-right: 1.5rem;
+		margin-bottom: 4rem;
+	}
+
+	.imageContainer {
+		// background-color: palegoldenrod;
+		height: 53rem;
+	}
+
+	.image {
+		object-fit: contain;
+		height: 100%;
+		// background-color: red;
+	}
+}
+
+// 375 -480px
+@media (max-width: 30em) {
+	.crew {
+		position: relative;
+		background-image: url("../../assets/img/crew/background-crew-mobile.jpg");
+		grid-template-rows: minmax(8rem, auto) 1fr 5rem 15rem;
+	}
+
+	.content {
+		grid-auto-flow: row;
+
+		margin: 2.4rem 0 0 0;
+	}
+	.textContainer {
+		display: grid;
+		grid-auto-flow: row;
+		margin: 0;
+	}
+
+	.subtile {
+		position: absolute;
+
+		top: 10%;
+		left: 25%;
+		font-size: var(--fs-600-s);
+		letter-spacing: 0.27rem;
+		margin-bottom: 3.2rem;
+		text-align: center;
+		margin: 0 0 0 0;
+	}
+
+	.imageContainer {
+		height: 22rem;
+		grid-row: 1 / 1;
+		margin-top: 2rem;
+		position: relative;
+	}
+
+	.imageContainer:after {
+		content: "";
+		width: 90%;
+		height: 1px;
+		background-color: hsl(var(--clr-light) / 0.3);
+		margin: 0 auto;
+	}
+
+	.image {
+		object-fit: scale-down;
+		height: 100%;
+	}
+
+	.specialty {
+		font-size: var(--fs-600-s);
+		margin-bottom: 0.8rem;
+	}
+
+	.name {
+		font-size: var(--fs-700-s);
+		margin-bottom: 1.6rem;
+	}
+
+	.mainText {
+		width: 32rem;
+		margin: 0 auto 4rem auto;
+		font-size: var(--fs-400-s);
+		line-height: 2.5rem;
+	}
+	.list {
+		grid-row: 1 / 1;
+		margin: 2rem 0;
+	}
+	.linkText {
+		margin-bottom: 0rem;
+	}
+}

@@ -1,18 +1,8 @@
 .destination {
-	position: relative;
 	width: 100%;
 	height: 100%;
-}
-
-.backgroundImage {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
+	background-image: url("../../assets/img/destination/background-destination-desktop.jpg");
+	background-size: cover;
 }
 
 .subtile {
@@ -126,6 +116,9 @@
 }
 // 760px 1024px
 @media (max-width: 64em) {
+	.destination {
+		background-image: url("../../assets/img/destination/background-destination-tablet.jpg");
+	}
 	.subtile {
 		font-size: var(--fs-600-t);
 		letter-spacing: 0.338rem;
@@ -136,14 +129,17 @@
 		display: flex;
 		flex-flow: column;
 		align-items: center;
+		height: 100%;
 	}
 
 	.destinationImage {
 		width: 30rem;
+		height: 30rem;
 		margin-bottom: 5rem;
 	}
 
 	.textContainer {
+		height: 100%;
 		text-align: center;
 	}
 
@@ -175,8 +171,11 @@
 	}
 }
 
-// 480px
+// 375 -480px
 @media (max-width: 30em) {
+	.destination {
+		background-image: url("../../assets/img/destination/background-destination-mobile.jpg");
+	}
 	.subtile {
 		font-size: var(--fs-600-s);
 		letter-spacing: 0.27rem;
@@ -190,6 +189,7 @@
 
 	.destinationImage {
 		width: 17rem;
+		height: 17rem;
 		margin-bottom: 2.6rem;
 	}
 
@@ -203,6 +203,7 @@
 
 	.contextContainer {
 		margin: 0;
+		height: 100%;
 	}
 
 	.linkText {
@@ -222,5 +223,8 @@
 	.distanceContainer {
 		display: block;
 		margin: 0 0 3rem 0;
+	}
+
+	.backgroundImage {
 	}
 }
