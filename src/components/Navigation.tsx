@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 // local imports
 import styles from "./navigation.module.scss";
 import Logo from "../assets/img/shared/logo.svg";
+import Hamburger from "./Hamburger";
 const Navigation: React.FC = () => {
 	return (
 		<header className={styles.header}>
@@ -29,13 +30,14 @@ const Navigation: React.FC = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/technology" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
+							<NavLink to="/technology/launch-vehicle" end className={({ isActive }) => (isActive ? ` ${styles.linkText}  active` : `${styles.linkText} `)}>
 								<span className={styles.linkNumber}>03</span> technology
 							</NavLink>
 						</li>
 					</ul>
 				</nav>
-				<div className={styles.hamburger}></div>
+				{/* <div className={styles.hamburger}></div> */}
+				<Hamburger />
 			</div>
 		</header>
 	);
